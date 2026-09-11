@@ -1,0 +1,227 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(var(--accent-rgb), 0.07), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--accent-rgb), 0.4);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--bg-soft);
+  color: var(--text);
+  transition: background 0.4s var(--ease), color 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.service-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.service-card:hover .service-icon {
+  background: var(--accent);
+  color: #14100a;
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.service-card h3 {
+  position: relative;
+  margin-top: 26px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.service-tag {
+  position: relative;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.service-card p {
+  position: relative;
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.service-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-soft);
+  transition: border-color 0.4s var(--ease);
+}
+
+.service-card:hover .service-footer {
+  border-color: rgba(var(--accent-rgb), 0.3);
+}
+
+.service-footer-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-faint);
+  transition: color 0.35s var(--ease);
+}
+
+.service-card:hover .service-footer-text {
+  color: var(--accent-dark);
+}
+
+.service-arrow {
+  display: inline-flex;
+  color: var(--accent-dark);
+  transform: translateX(-4px);
+  opacity: 0.6;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+
+.service-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.service-card:hover .service-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 980px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .service-card {
+    padding: 28px 22px;
+  }
+}
+
+/* ---------- IT & Business Systems band ---------- */
+
+.it-head {
+  max-width: 640px;
+  margin: 88px 0 40px;
+}
+
+.it-head h3 {
+  margin-top: 12px;
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.2;
+}
+
+.it-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.it-card {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-alt);
+  transition: border-color 0.4s var(--ease), background 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.it-card:hover {
+  border-color: rgba(var(--accent-rgb), 0.35);
+  background: var(--bg);
+  transform: translateY(-4px);
+}
+
+.it-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--accent-dark);
+}
+
+.it-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.it-card h4 {
+  font-size: 15.5px;
+}
+
+.it-card p {
+  margin-top: 6px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .it-head {
+    margin: 56px 0 28px;
+  }
+  .it-grid {
+    grid-template-columns: 1fr;
+  }
+}

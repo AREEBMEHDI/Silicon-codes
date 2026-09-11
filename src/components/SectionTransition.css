@@ -1,0 +1,81 @@
+.section-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-scanline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--accent) 45%, var(--accent-light) 55%, transparent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+}
+
+.section-scanline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -6%;
+  width: 72px;
+  height: 10px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.9), transparent 70%);
+  filter: blur(2.5px);
+  opacity: 0;
+}
+
+.section-scanline.is-visible::before {
+  animation: scanlineSweep 1.9s var(--ease) forwards;
+}
+
+.section-scanline.is-visible::after {
+  animation: scanlineRunner 1.15s var(--ease) forwards;
+}
+
+@keyframes scanlineSweep {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  55% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes scanlineRunner {
+  0% {
+    left: -6%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-scanline::before,
+  .section-scanline::after {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}

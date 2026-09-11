@@ -1,0 +1,67 @@
+.cta {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta .eyebrow {
+  color: var(--accent-light);
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-heading {
+  margin-top: 16px;
+  font-size: clamp(36px, 5.4vw, 64px);
+  line-height: 1.06;
+  color: var(--text-on-dark);
+}
+
+.cta-sub {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--text-on-dark-soft);
+}
+
+.cta-btn {
+  margin-top: 40px;
+  padding: 18px 34px;
+  font-size: 16px;
+  transition: transform 0.15s ease-out, box-shadow 0.35s var(--ease);
+}
+
+.cta-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 14.5px;
+  color: var(--text-on-dark-soft);
+}
+
+.cta-contact-row a {
+  color: var(--text-on-dark-soft);
+  transition: color 0.3s ease;
+}
+
+.cta-contact-row a:hover {
+  color: var(--accent-light);
+}
+
+@media (max-width: 640px) {
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cta-contact-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cta-contact-row span {
+    display: none;
+  }
+}

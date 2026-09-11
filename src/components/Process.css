@@ -1,0 +1,115 @@
+.process-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding-top: 8px;
+}
+
+.process-line {
+  position: absolute;
+  top: 27px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.process-line-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent-light), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.process-step {
+  position: relative;
+  text-align: left;
+  opacity: 0.45;
+  transition: opacity 0.5s var(--ease);
+}
+
+.process-step.is-active {
+  opacity: 1;
+}
+
+.process-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-soft);
+  transition: background 0.5s var(--ease), border-color 0.5s var(--ease), color 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.process-step.is-active .process-node {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #14100a;
+  transform: scale(1.08);
+  box-shadow: 0 0 0 6px rgba(var(--accent-rgb), 0.16);
+}
+
+.process-step h3 {
+  margin-top: 22px;
+  font-size: 20px;
+}
+
+.process-step p {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .process-track {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 28px;
+  }
+
+  .process-line {
+    top: 0;
+    bottom: 0;
+    left: 27px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .process-line-fill {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
+
+  .process-step {
+    padding: 0 0 40px 44px;
+    margin-left: -28px;
+  }
+
+  .process-step:last-child {
+    padding-bottom: 4px;
+  }
+
+  .process-node {
+    position: absolute;
+    left: -28px;
+    top: -2px;
+    width: 44px;
+    height: 44px;
+  }
+}

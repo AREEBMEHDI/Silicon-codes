@@ -77,13 +77,13 @@
   .process-track {
     grid-template-columns: 1fr;
     gap: 0;
-    padding-left: 28px;
+    padding-left: 64px;
   }
 
   .process-line {
     top: 0;
     bottom: 0;
-    left: 27px;
+    left: 31px;
     right: auto;
     width: 2px;
     height: auto;
@@ -97,8 +97,7 @@
   }
 
   .process-step {
-    padding: 0 0 40px 44px;
-    margin-left: -28px;
+    padding-bottom: 40px;
   }
 
   .process-step:last-child {
@@ -107,9 +106,25 @@
 
   .process-node {
     position: absolute;
-    left: -28px;
+    left: -54px;
     top: -2px;
     width: 44px;
     height: 44px;
+  }
+}
+
+@media (max-width: 400px) {
+  .process-track {
+    padding-left: 56px;
+  }
+
+  .process-line {
+    left: 27px;
+  }
+
+  .process-node {
+    left: -48px;
+    width: 40px;
+    height: 40px;
   }
 }

@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials'
 import BrandMoment from './components/BrandMoment'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import WhatsAppWidget from './components/WhatsAppWidget'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <CTA />
       </main>
       <Footer />
+      <WhatsAppWidget />
     </>
   )
 }

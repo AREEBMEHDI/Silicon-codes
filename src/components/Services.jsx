@@ -6,9 +6,9 @@ import './Services.css'
 const SERVICES = [
   {
     n: '01',
-    title: 'Website Designing and Development',
-    tag: 'Where creativity meets functionality',
-    desc: 'Stunning, user-centric websites with responsive design and intuitive navigation that leave a lasting impression on your customers.',
+    title: 'AI-Based Web Development',
+    tag: 'Where creativity meets intelligence',
+    desc: 'Modern, AI-assisted websites with responsive design, smart features and intuitive navigation that leave a lasting impression on your customers.',
     icon: <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z M4 9h16" strokeLinecap="round" strokeLinejoin="round" />,
   },
   {
@@ -67,6 +67,27 @@ const SERVICES = [
     desc: 'Tailored platforms with user-friendly interfaces, secure payment gateways and robust inventory management.',
     icon: <path d="M3 4h2l1.4 10.6a2 2 0 0 0 2 1.7h7.6a2 2 0 0 0 2-1.6L19.5 8H6.2 M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z M17 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" strokeLinecap="round" strokeLinejoin="round" />,
   },
+  {
+    n: '10',
+    title: 'AI Software',
+    tag: 'Custom intelligence for your business',
+    desc: 'Bespoke AI-powered tools and integrations — from automation to intelligent assistants — built to solve real business problems.',
+    icon: <path d="M12 3l1.8 6.2L20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8L12 3Z" strokeLinecap="round" strokeLinejoin="round" />,
+  },
+  {
+    n: '11',
+    title: 'Video Editing',
+    tag: 'Stories that capture attention',
+    desc: 'Professional video editing and post-production — promos, social content and brand films — polished to engage your audience.',
+    icon: <path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z M10 9l5 3-5 3V9Z" strokeLinecap="round" strokeLinejoin="round" />,
+  },
+  {
+    n: '12',
+    title: 'CRM',
+    tag: 'Know your customers, grow your business',
+    desc: 'Custom CRM solutions that centralize customer data, streamline sales pipelines and strengthen client relationships.',
+    icon: <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z M9 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z M6.5 17c.6-1.8 1.9-2.5 2.5-2.5s1.9.7 2.5 2.5 M14 9h4M14 12h4M14 15h3" strokeLinecap="round" strokeLinejoin="round" />,
+  },
 ]
 
 const IT_SERVICES = [
@@ -81,8 +102,8 @@ const IT_SERVICES = [
     icon: <path d="M4 5h16v10H4z M9 20h6 M12 15v5" strokeLinecap="round" strokeLinejoin="round" />,
   },
   {
-    title: 'ERP Solutions (Odoo)',
-    desc: 'Customized Odoo ERP services designed to enhance your business operations, tailored to your specific needs.',
+    title: 'Odoo Partner',
+    desc: 'Customized Odoo ERP implementation and support designed to enhance your business operations, tailored to your specific needs.',
     icon: <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" strokeLinecap="round" strokeLinejoin="round" />,
   },
   {
@@ -91,7 +112,7 @@ const IT_SERVICES = [
     icon: <path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4L21 6l-3-3-3.3 3.3Z" strokeLinecap="round" strokeLinejoin="round" />,
   },
   {
-    title: 'HR Information System',
+    title: 'HR Management Software',
     desc: 'Streamline workforce management — employee profiles, attendance, leave and payroll — in one seamless suite.',
     icon: <path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M3 20a6 6 0 0 1 12 0 M17 11a3 3 0 1 0 0-6 M21 20a6 6 0 0 0-5-5.9" strokeLinecap="round" strokeLinejoin="round" />,
   },

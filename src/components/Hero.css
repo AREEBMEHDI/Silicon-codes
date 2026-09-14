@@ -555,10 +555,11 @@
 }
 
 @keyframes heroStepCycle {
-  0%, 100% { opacity: 0; transform: translateY(6px); }
-  8% { opacity: 1; transform: translateY(0); }
-  42% { opacity: 1; transform: translateY(0); }
-  50% { opacity: 0; transform: translateY(-6px); }
+  0% { opacity: 0; transform: translateY(6px); }
+  5% { opacity: 1; transform: translateY(0); }
+  21% { opacity: 1; transform: translateY(0); }
+  25% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

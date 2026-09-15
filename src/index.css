@@ -13,8 +13,8 @@
   --bg-clean: #fbfbfa;
   --bg-clean-1: #f2f2ef;
   /* fixed dark surface, constant regardless of section context (e.g. device frames on a .section-clean) */
-  --deep: #0a0b0d;
-  --deep-1: #14171c;
+  --deep: #0b1730;
+  --deep-1: #1c3563;
 
   /* ---------- Text ---------- */
   --ink: #f4f5f6;

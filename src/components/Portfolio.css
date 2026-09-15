@@ -11,11 +11,17 @@
   margin-bottom: 44px;
 }
 
-.portfolio-heading {
+.portfolio-head .portfolio-heading {
   margin-top: 18px;
   font-size: clamp(32px, 4.6vw, 52px);
   line-height: 1.05;
   letter-spacing: -0.03em;
+}
+
+@media (max-width: 640px) {
+  .portfolio-head .portfolio-heading {
+    font-size: clamp(23px, 6.8vw, 30px);
+  }
 }
 
 .portfolio-divider {

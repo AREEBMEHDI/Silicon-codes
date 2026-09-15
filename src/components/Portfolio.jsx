@@ -169,13 +169,7 @@ export default function Portfolio() {
           <p className="eyebrow">
             <span className="sys-index">§03</span> Featured Work
           </p>
-          <h2 className="portfolio-heading">
-            Real solutions.
-            <br />
-            Real businesses.
-            <br />
-            Real results.
-          </h2>
+          <h2 className="portfolio-heading">Real solutions. Real businesses. Real results.</h2>
           <span className="portfolio-divider" aria-hidden="true" />
         </div>
 

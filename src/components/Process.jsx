@@ -50,7 +50,9 @@ export default function Process() {
       <SectionTransition />
       <div className="container">
         <div ref={headRef} className={`section-head center reveal ${headVisible ? 'is-visible' : ''}`}>
-          <p className="eyebrow" style={{ justifyContent: 'center' }}>Our Process</p>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>
+            <span className="sys-index">§06</span> Our Process
+          </p>
           <h2>How We Work</h2>
         </div>
 

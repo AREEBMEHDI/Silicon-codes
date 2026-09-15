@@ -16,8 +16,12 @@
   flex-direction: column;
   justify-content: center;
   background:
-    radial-gradient(560px 420px at 84% 18%, rgba(var(--accent-rgb), 0.1), transparent 70%),
+    radial-gradient(640px 460px at 82% 12%, rgba(var(--accent-rgb), 0.1), transparent 70%),
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px),
     var(--bg);
+  background-size: auto, 56px 56px, 56px 56px, auto;
+  background-position: center, center, center, center;
   --mx: 50%;
   --my: 40%;
 }
@@ -26,7 +30,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(360px circle at var(--mx) var(--my), rgba(var(--accent-rgb), 0.12), transparent 65%);
+  background: radial-gradient(400px circle at var(--mx) var(--my), rgba(var(--accent-rgb), 0.1), transparent 65%);
   transition: opacity 0.3s ease;
   z-index: 0;
 }
@@ -45,26 +49,49 @@
 }
 
 .hero-eyebrow {
-  gap: 6px;
+  gap: 8px;
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 6px 12px 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.hero-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
+  animation: nodePulse 2.4s ease-in-out infinite;
 }
 
 .hero-title {
-  margin-top: 22px;
-  font-size: clamp(38px, 4.6vw, 62px);
-  line-height: 1.06;
-  letter-spacing: -0.025em;
+  margin-top: 20px;
+  font-size: clamp(40px, 4.8vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
 }
 
 .hero-sub {
-  margin-top: 24px;
+  margin-top: 26px;
   max-width: 480px;
   font-size: 18px;
   line-height: 1.65;
-  color: var(--text-soft);
+  color: var(--ink-soft);
 }
 
 .hero-actions {
-  margin-top: 36px;
+  margin-top: 38px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -85,9 +112,9 @@
 .hero-visual-frame {
   position: relative;
   height: 560px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  background: linear-gradient(165deg, var(--bg-soft) 0%, #ffffff 60%);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, var(--bg-2) 0%, var(--bg-1) 70%);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
@@ -101,7 +128,7 @@
 .grid-dots {
   position: absolute;
   inset: -1px;
-  background-image: radial-gradient(rgba(17, 24, 39, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 22px 22px;
   mask-image: radial-gradient(circle at 70% 30%, black 0%, transparent 75%);
 }
@@ -128,7 +155,7 @@
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.06em;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 .hero-step-word {
@@ -136,7 +163,7 @@
   font-size: clamp(40px, 5.6vw, 58px);
   line-height: 1;
   letter-spacing: -0.03em;
-  background: linear-gradient(95deg, var(--text) 45%, var(--accent-dark) 100%);
+  background: linear-gradient(95deg, var(--ink) 45%, var(--accent) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -149,7 +176,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text);
+  color: var(--ink);
 }
 
 /* Circuit graphic */
@@ -157,7 +184,7 @@
 .graphic-circuit {
   width: 100%;
   height: 100%;
-  color: var(--text);
+  color: var(--ink-soft);
 }
 
 .graphic-circuit .node {
@@ -182,8 +209,9 @@
 .code-card {
   position: absolute;
   inset: 6% 4%;
-  background: var(--bg-dark);
-  border-radius: 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
   padding: 18px 20px;
   box-shadow: var(--shadow-lg);
 }
@@ -191,8 +219,8 @@
 .code-card-back {
   inset: 14% 10% 0 14%;
   z-index: -1;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
+  background: var(--bg-1);
+  border: 1px solid var(--line);
   transform: translate(14px, 14px);
 }
 
@@ -206,14 +234,14 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .code-line {
   height: 8px;
   margin-bottom: 10px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
   animation: codeFade 0.6s var(--ease) backwards;
 }
 
@@ -249,9 +277,9 @@
 
 .ui-frag {
   position: absolute;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  background: var(--bg-clean);
+  border: 1px solid rgba(11, 13, 16, 0.08);
+  border-radius: 10px;
   box-shadow: var(--shadow-md);
   animation: fragFloat 5.5s ease-in-out infinite;
 }
@@ -267,8 +295,8 @@
 
 .frag-bar {
   height: 9px;
-  border-radius: 5px;
-  background: var(--bg-soft);
+  border-radius: 3px;
+  background: var(--bg-clean-1);
   margin-bottom: 16px;
 }
 
@@ -281,7 +309,7 @@
 
 .frag-chart span {
   flex: 1;
-  border-radius: 4px 4px 0 0;
+  border-radius: 3px 3px 0 0;
   background: linear-gradient(180deg, var(--accent-light), var(--accent));
   animation: barGrow 1s var(--ease) backwards;
 }
@@ -299,14 +327,14 @@
 
 .frag-stat-label {
   font-size: 11px;
-  color: var(--text-faint);
+  color: var(--ink-on-clean-faint);
   font-family: var(--font-mono);
 }
 
 .frag-stat-value {
   font-size: 20px;
   font-weight: 700;
-  color: var(--accent-dark);
+  color: var(--accent-dim);
 }
 
 .frag-pill {
@@ -315,6 +343,7 @@
   padding: 9px 16px;
   font-size: 13px;
   font-weight: 600;
+  color: var(--ink-on-clean);
   border-radius: 999px;
   animation-delay: 2.1s;
 }
@@ -382,9 +411,9 @@
 
 .impact-bars span {
   flex: 1;
-  border-radius: 4px 4px 0 0;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
+  border-radius: 3px 3px 0 0;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
   animation: barGrow 0.9s var(--ease) backwards;
 }
 
@@ -394,10 +423,10 @@
   right: 6%;
   padding: 8px 14px;
   border-radius: 999px;
-  background: var(--bg-dark);
-  color: var(--accent-light);
+  background: var(--accent);
+  color: #14100a;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   box-shadow: var(--shadow-md);
 }
 
@@ -417,18 +446,18 @@
 }
 
 .hero-final-headline {
-  font-size: clamp(46px, 8vw, 96px);
+  font-size: clamp(46px, 8vw, 100px);
   font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  color: var(--text);
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  color: var(--ink);
   margin: 0;
 }
 
 .hero-final-sub {
   margin-top: 22px;
   font-size: 19px;
-  color: var(--text-soft);
+  color: var(--ink-soft);
 }
 
 .hero-final .btn {
@@ -452,14 +481,14 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 .hero-scroll-cue i {
   display: block;
   width: 1px;
   height: 26px;
-  background: linear-gradient(var(--text-faint), transparent);
+  background: linear-gradient(var(--ink-faint), transparent);
   position: relative;
   overflow: hidden;
 }

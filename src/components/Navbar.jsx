@@ -3,13 +3,13 @@ import logo from '../assets/Logo.png'
 import './Navbar.css'
 
 const LINKS = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#process', label: 'Process' },
-  { href: '#tech-stack', label: 'Tech Stack' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#home', label: 'Home', idx: '00' },
+  { href: '#services', label: 'Services', idx: '01' },
+  { href: '#portfolio', label: 'Portfolio', idx: '02' },
+  { href: '#process', label: 'Process', idx: '03' },
+  { href: '#tech-stack', label: 'Tech Stack', idx: '04' },
+  { href: '#about', label: 'About', idx: '05' },
+  { href: '#contact', label: 'Contact', idx: '06' },
 ]
 
 export default function Navbar() {
@@ -79,6 +79,7 @@ export default function Navbar() {
               className={active === link.href ? 'is-active' : ''}
               onClick={() => setActive(link.href)}
             >
+              <span className="navbar-link-idx">{link.idx}</span>
               {link.label}
             </a>
           ))}
@@ -115,6 +116,7 @@ export default function Navbar() {
                 setOpen(false)
               }}
             >
+              <span className="navbar-mobile-idx">{link.idx}</span>
               {link.label}
             </a>
           ))}

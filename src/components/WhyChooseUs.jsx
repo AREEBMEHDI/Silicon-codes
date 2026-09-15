@@ -77,7 +77,9 @@ export default function WhyChooseUs() {
       <SectionTransition />
       <div className="container">
         <div ref={headRef} className={`section-head reveal ${headVisible ? 'is-visible' : ''}`}>
-          <p className="eyebrow">Why Choose Us</p>
+          <p className="eyebrow">
+            <span className="sys-index">§04</span> Why Choose Us
+          </p>
           <h2>Unleash the power of digital solutions for your success.</h2>
           <p>We work directly for our clients and put their interests first.</p>
         </div>
@@ -88,10 +90,10 @@ export default function WhyChooseUs() {
           ))}
         </div>
 
-        <div className="differentiators-grid">
-          {DIFFERENTIATORS.map((item, i) => {
-            return <Differentiator key={item.title} item={item} index={i} />
-          })}
+        <div className="differentiators-list">
+          {DIFFERENTIATORS.map((item, i) => (
+            <Differentiator key={item.title} item={item} index={i} />
+          ))}
         </div>
       </div>
     </section>
@@ -100,11 +102,15 @@ export default function WhyChooseUs() {
 
 function Differentiator({ item, index }) {
   const [ref, visible] = useReveal({ threshold: 0.15 })
+  const n = String(index + 1).padStart(2, '0')
   return (
-    <div ref={ref} className={`differentiator reveal ${visible ? 'is-visible' : ''}`} style={{ '--reveal-delay': `${(index % 3) * 90}ms` }}>
-      <h4>{item.title}</h4>
-      <p className="differentiator-tag">{item.tag}</p>
-      <p>{item.desc}</p>
+    <div ref={ref} className={`differentiator reveal ${visible ? 'is-visible' : ''}`} style={{ '--reveal-delay': `${(index % 4) * 70}ms` }}>
+      <span className="differentiator-n">{n}</span>
+      <div>
+        <h4>{item.title}</h4>
+        <p className="differentiator-tag">{item.tag}</p>
+        <p>{item.desc}</p>
+      </div>
     </div>
   )
 }

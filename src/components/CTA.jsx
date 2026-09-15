@@ -74,13 +74,15 @@ export default function CTA() {
   }
 
   return (
-    <section id="contact" className="cta section-dark section" aria-label="Contact us">
+    <section id="contact" className="cta section" aria-label="Contact us">
       <SectionTransition />
-      <SectionCircuits variant="a" />
+      <SectionCircuits variant="a" opacity={0.35} />
 
       <div className="container cta-inner">
         <div ref={heroRef} className={`cta-hero reveal ${heroVisible ? 'is-visible' : ''}`}>
-          <p className="eyebrow" style={{ justifyContent: 'center' }}>Get In Touch</p>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>
+            <span className="sys-index">§09</span> Get In Touch
+          </p>
           <h2 className="cta-heading">
             Let&rsquo;s Build Something
             <br />

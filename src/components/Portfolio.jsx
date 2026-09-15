@@ -1,4 +1,6 @@
+import { useRef } from 'react'
 import useReveal from '../hooks/useReveal'
+import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion'
 import premierCarAudio from '../assets/portfolio/premier-car-audio.jpg'
 import radiantVisage from '../assets/portfolio/radiant-visage.png'
 import rotanaSalon from '../assets/portfolio/rotana-salon.png'
@@ -58,41 +60,99 @@ const PROJECTS = [
   },
 ]
 
-function ProjectCard({ project, index }) {
+function ProjectImage({ project }) {
+  const fitClass = project.imageFit === 'contain-dark' ? 'media-contain-dark' : project.image ? 'media-contain' : ''
+  return (
+    <div className={`project-media ${project.pattern || ''} ${fitClass}`}>
+      {project.image ? (
+        <img src={project.image} alt={`${project.name} logo`} loading="lazy" />
+      ) : (
+        <div className="project-media-overlay" />
+      )}
+    </div>
+  )
+}
+
+function ProjectMeta({ project }) {
+  return (
+    <div className="project-text">
+      <span className="project-category">{project.category}</span>
+      <h3 className="project-title">{project.name}</h3>
+      <p className="project-desc">{project.desc}</p>
+    </div>
+  )
+}
+
+function ProjectShowcase({ project, index }) {
   const [ref, visible] = useReveal({ threshold: 0.12 })
+  const mediaRef = useRef(null)
+  const reducedMotion = usePrefersReducedMotion()
   const Wrapper = project.url ? 'a' : 'div'
   const wrapperProps = project.url ? { href: project.url, target: '_blank', rel: 'noreferrer' } : {}
+  const n = String(index + 1).padStart(2, '0')
+
+  const handleMove = (e) => {
+    if (reducedMotion) return
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+    const el = mediaRef.current
+    if (!el) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    const px = (e.clientX - rect.left) / rect.width - 0.5
+    const py = (e.clientY - rect.top) / rect.height - 0.5
+    el.style.setProperty('--tiltx', `${px * 10}px`)
+    el.style.setProperty('--tilty', `${py * 10}px`)
+  }
+
+  const handleLeave = () => {
+    const el = mediaRef.current
+    if (!el) return
+    el.style.setProperty('--tiltx', '0px')
+    el.style.setProperty('--tilty', '0px')
+  }
 
   return (
     <Wrapper
       {...wrapperProps}
       ref={ref}
-      className={`project-card reveal ${visible ? 'is-visible' : ''} ${!project.url ? 'is-static' : ''}`}
-      style={{ '--reveal-delay': `${index * 80}ms` }}
+      className={`project-row ${!project.url ? 'is-static' : ''} ${visible ? 'is-visible' : ''}`}
     >
-      <div className={`project-media ${project.pattern || ''} ${project.imageFit === 'contain-dark' ? 'media-contain-dark' : project.image ? 'media-contain' : ''}`}>
-        {project.image ? (
-          <img src={project.image} alt={`${project.name} logo`} loading="lazy" />
-        ) : (
-          <div className="project-media-overlay" />
-        )}
-        <span className="project-category-badge">{project.category}</span>
+      <div className="project-topline" aria-hidden="true">
+        <span className="project-topline-index">Case Study / {n}</span>
+        <span className="project-topline-rule" />
+        <span className="project-topline-tag">Client Work</span>
       </div>
-      <div className="project-body">
-        <div>
-          <h3>{project.name}</h3>
-          <p className="project-desc">{project.desc}</p>
+
+      <div className="project-split">
+        <div className="project-visual" onMouseMove={handleMove} onMouseLeave={handleLeave}>
+          <div className="project-frame" ref={mediaRef}>
+            <ProjectImage project={project} />
+            <span className="project-frame-corner tl" aria-hidden="true" />
+            <span className="project-frame-corner tr" aria-hidden="true" />
+            <span className="project-frame-corner bl" aria-hidden="true" />
+            <span className="project-frame-corner br" aria-hidden="true" />
+            {project.url && (
+              <span className="project-frame-indicator" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14 14 6M14 6H8M14 6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            )}
+          </div>
         </div>
-        {project.url ? (
-          <span className="project-link">
-            View Project
-            <svg viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-        ) : (
-          <span className="project-link is-muted">Past Project</span>
-        )}
+
+        <div className="project-content">
+          <ProjectMeta project={project} />
+          {project.url ? (
+            <span className="project-link">
+              View project
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+          ) : (
+            <span className="project-link is-muted">Past project</span>
+          )}
+        </div>
       </div>
     </Wrapper>
   )
@@ -100,18 +160,28 @@ function ProjectCard({ project, index }) {
 
 export default function Portfolio() {
   const [headRef, headVisible] = useReveal()
+
   return (
-    <section id="portfolio" className="section portfolio" aria-label="Featured work">
+    <section id="portfolio" className="section portfolio section-clean" aria-label="Featured work">
       <SectionTransition />
       <div className="container">
-        <div ref={headRef} className={`section-head reveal ${headVisible ? 'is-visible' : ''}`}>
-          <p className="eyebrow">Featured Work</p>
-          <h2>Real solutions. Real businesses. Real results.</h2>
+        <div ref={headRef} className={`section-head portfolio-head reveal ${headVisible ? 'is-visible' : ''}`}>
+          <p className="eyebrow">
+            <span className="sys-index">§03</span> Featured Work
+          </p>
+          <h2 className="portfolio-heading">
+            Real solutions.
+            <br />
+            Real businesses.
+            <br />
+            Real results.
+          </h2>
+          <span className="portfolio-divider" aria-hidden="true" />
         </div>
 
-        <div className="portfolio-grid">
+        <div className="project-list">
           {PROJECTS.map((project, i) => (
-            <ProjectCard key={project.name} project={project} index={i} />
+            <ProjectShowcase key={project.name} project={project} index={i} />
           ))}
         </div>
       </div>

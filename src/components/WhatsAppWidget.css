@@ -76,7 +76,7 @@
   display: flex;
   align-items: center;
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--line-on-clean);
   border-radius: 999px;
   padding: 11px 20px;
   box-shadow: 0 12px 30px -10px rgba(17, 24, 39, 0.28);
@@ -113,7 +113,7 @@
 }
 
 .whatsapp-tooltip-close:hover {
-  background: var(--accent-dark);
+  background: var(--accent-dim);
   transform: scale(1.1);
 }
 

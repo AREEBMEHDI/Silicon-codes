@@ -26,7 +26,7 @@ const OFFICES = [
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="footer section-dark" aria-label="Footer">
+    <footer className="footer" aria-label="Footer">
       <div className="container footer-inner">
         <div className="footer-brand">
           <img src={logo} alt="Silicon Codes Ltd." className="footer-logo" />

@@ -3,10 +3,6 @@
   overflow: hidden;
 }
 
-.cta .eyebrow {
-  color: var(--accent-light);
-}
-
 .cta-inner {
   position: relative;
   z-index: 1;
@@ -20,13 +16,13 @@
   margin-top: 16px;
   font-size: clamp(36px, 5.4vw, 64px);
   line-height: 1.06;
-  color: var(--text-on-dark);
+  color: var(--ink);
 }
 
 .cta-sub {
   margin-top: 20px;
   font-size: 18px;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
 }
 
 .cta-btn {
@@ -43,16 +39,16 @@
   gap: 10px;
   margin-top: 22px;
   font-size: 14.5px;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
 }
 
 .cta-contact-row a {
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
   transition: color 0.3s ease;
 }
 
 .cta-contact-row a:hover {
-  color: var(--accent-light);
+  color: var(--accent-ink);
 }
 
 /* ---------- Form + offices panel ---------- */
@@ -61,7 +57,7 @@
   text-align: left;
   margin-top: 96px;
   padding-top: 64px;
-  border-top: 1px solid var(--border-dark);
+  border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 56px;
@@ -69,13 +65,13 @@
 
 .cta-form h3 {
   font-size: 24px;
-  color: var(--text-on-dark);
+  color: var(--ink);
 }
 
 .cta-form-hint {
   margin-top: 8px;
   font-size: 14px;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
 }
 
 .cta-field {
@@ -85,19 +81,19 @@
   margin-top: 20px;
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
 }
 
 .cta-required {
-  color: var(--accent-light);
+  color: var(--accent-ink);
 }
 
 .cta-field input {
   padding: 13px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.04);
-  color: var(--text-on-dark);
+  color: var(--ink);
   font-size: 15px;
   font-family: inherit;
   transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
@@ -127,7 +123,7 @@
 .cta-form-status {
   margin-top: 14px;
   font-size: 13.5px;
-  color: var(--accent-light);
+  color: var(--accent-ink);
 }
 
 .cta-offices {
@@ -139,7 +135,7 @@
 .cta-office {
   overflow: hidden;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
   transition: border-color 0.4s var(--ease), background 0.4s var(--ease), transform 0.4s var(--ease);
 }
@@ -153,7 +149,7 @@
 .cta-office-map {
   position: relative;
   height: 150px;
-  border-bottom: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--line);
 }
 
 .cta-office-map iframe {
@@ -170,14 +166,14 @@
 
 .cta-office h4 {
   font-size: 15.5px;
-  color: var(--text-on-dark);
+  color: var(--ink);
 }
 
 .cta-office p {
   margin-top: 10px;
   font-size: 13.5px;
   line-height: 1.55;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
 }
 
 .cta-office a {
@@ -185,12 +181,12 @@
   width: fit-content;
   margin-top: 6px;
   font-size: 13.5px;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
   transition: color 0.3s ease;
 }
 
 .cta-office a:hover {
-  color: var(--accent-light);
+  color: var(--accent-ink);
 }
 
 @media (max-width: 900px) {

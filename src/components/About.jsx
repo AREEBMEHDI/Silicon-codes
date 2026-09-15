@@ -60,7 +60,7 @@ export default function About() {
   const [textRef, textVisible] = useReveal()
 
   return (
-    <section id="about" className="section about section-dark" aria-label="About Silicon Codes">
+    <section id="about" className="section about" aria-label="About Silicon Codes">
       <SectionTransition />
       <SectionCircuits variant="c" opacity={0.4} />
       <div className="container">
@@ -84,7 +84,9 @@ export default function About() {
           </div>
 
           <div ref={textRef} className={`about-content reveal ${textVisible ? 'is-visible' : ''}`}>
-            <p className="eyebrow">Who We Are</p>
+            <p className="eyebrow">
+              <span className="sys-index">§05</span> Who We Are
+            </p>
             <h2 className="about-heading">
               Revolutionising digital solutions for
               <span className="accent"> global success.</span>
@@ -103,14 +105,19 @@ export default function About() {
         <div className="about-pillars">
           {PILLARS.map((p, i) => (
             <Reveal key={p.title} className="pillar" delay={i * 90}>
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
+              <span className="pillar-n">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+              </div>
             </Reveal>
           ))}
         </div>
 
         <Reveal className="about-subhead">
-          <p className="eyebrow">Meet Our Team</p>
+          <p className="eyebrow">
+            <span className="sys-index">§05.1</span> Meet Our Team
+          </p>
           <h3>A diverse team, one shared standard of craft.</h3>
         </Reveal>
 
@@ -129,7 +136,9 @@ export default function About() {
         </div>
 
         <Reveal className="about-subhead">
-          <p className="eyebrow">Where We Work</p>
+          <p className="eyebrow">
+            <span className="sys-index">§05.2</span> Where We Work
+          </p>
           <h3>Serving forward-thinking businesses across the globe.</h3>
         </Reveal>
 

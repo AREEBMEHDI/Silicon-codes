@@ -1,5 +1,6 @@
 .footer {
   padding-top: 88px;
+  border-top: 1px solid var(--line);
 }
 
 .footer-inner {
@@ -17,7 +18,7 @@
 .footer-brand p {
   margin-top: 18px;
   max-width: 280px;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -35,8 +36,8 @@
   gap: 8px;
   padding: 9px 16px;
   border-radius: 999px;
-  border: 1px solid var(--border-dark);
-  color: var(--text-on-dark-soft);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
   font-size: 13.5px;
   font-weight: 600;
   transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
@@ -48,7 +49,7 @@
 }
 
 .footer-social-link:hover {
-  color: var(--accent-light);
+  color: var(--accent-ink);
   border-color: var(--accent);
   transform: translateY(-2px);
 }
@@ -59,7 +60,7 @@
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
   margin-bottom: 18px;
 }
 
@@ -70,13 +71,13 @@
 }
 
 .footer-nav a {
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
   font-size: 15px;
   transition: color 0.3s ease;
 }
 
 .footer-nav a:hover {
-  color: var(--accent-light);
+  color: var(--accent-ink);
 }
 
 .footer-offices {
@@ -98,29 +99,29 @@
 .footer-office-label {
   font-size: 14.5px;
   font-weight: 700;
-  color: var(--text-on-dark);
+  color: var(--ink);
   margin-bottom: 2px;
 }
 
 .footer-office p {
   font-size: 13.5px;
   line-height: 1.55;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
 }
 
 .footer-office a {
   font-size: 13.5px;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
   transition: color 0.3s ease;
   width: fit-content;
 }
 
 .footer-office a:hover {
-  color: var(--accent-light);
+  color: var(--accent-ink);
 }
 
 .footer-hairline {
-  border-top: 1px solid var(--border-dark);
+  border-top: 1px solid var(--line);
   margin: 0 0 28px;
 }
 
@@ -130,7 +131,7 @@
 
 .footer-bottom p {
   font-size: 13.5px;
-  color: var(--text-on-dark-soft);
+  color: var(--ink-soft);
 }
 
 @media (max-width: 900px) {

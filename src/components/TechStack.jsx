@@ -72,12 +72,14 @@ export default function TechStack() {
   const reducedMotion = usePrefersReducedMotion()
 
   return (
-    <section id="tech-stack" className="section tech-stack section-dark" aria-label="Technologies we work with">
+    <section id="tech-stack" className="section tech-stack" aria-label="Technologies we work with">
       <SectionTransition />
-      <SectionCircuits variant="a" />
+      <SectionCircuits variant="a" opacity={0.35} />
       <div className="container">
         <div ref={headRef} className={`section-head reveal ${headVisible ? 'is-visible' : ''}`}>
-          <p className="eyebrow">Our Stack</p>
+          <p className="eyebrow">
+            <span className="sys-index">§07</span> Our Stack
+          </p>
           <h2>Technologies We Work With</h2>
         </div>
       </div>

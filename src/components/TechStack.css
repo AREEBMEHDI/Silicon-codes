@@ -11,16 +11,15 @@
   justify-content: center;
   gap: 14px;
   padding: 30px 16px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--bg);
-  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-1);
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
 .tech-card:hover {
   transform: translateY(-5px);
   border-color: rgba(var(--accent-rgb), 0.35);
-  box-shadow: var(--shadow-md);
 }
 
 .tech-icon {
@@ -29,7 +28,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  color: var(--text-soft);
+  color: var(--ink-faint);
   transition: color 0.4s var(--ease), transform 0.4s var(--ease);
 }
 
@@ -46,7 +45,7 @@
 .tech-name {
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--text);
+  color: var(--ink);
   text-align: center;
   white-space: nowrap;
 }

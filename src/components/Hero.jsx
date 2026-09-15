@@ -187,6 +187,10 @@ export default function Hero() {
 
           <div className="hero-grid">
             <div className="hero-left" ref={leftRef}>
+              <span className="hero-status">
+                <span className="hero-status-dot" aria-hidden="true" />
+                Available for new projects
+              </span>
               <p className="eyebrow hero-eyebrow">IDEAS <span aria-hidden="true">→</span> CODE <span aria-hidden="true">→</span> IMPACT</p>
               <h1 className="hero-title">
                 Custom Software

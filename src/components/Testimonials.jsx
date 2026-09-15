@@ -55,12 +55,14 @@ function TestimonialCard({ item, index }) {
 export default function Testimonials() {
   const [headRef, headVisible] = useReveal()
   return (
-    <section id="testimonials" className="section testimonials section-dark" aria-label="Client testimonials">
+    <section id="testimonials" className="section testimonials" aria-label="Client testimonials">
       <SectionTransition />
-      <SectionCircuits variant="c" />
+      <SectionCircuits variant="c" opacity={0.35} />
       <div className="container">
         <div ref={headRef} className={`section-head center reveal ${headVisible ? 'is-visible' : ''}`}>
-          <p className="eyebrow" style={{ justifyContent: 'center' }}>Testimonials</p>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>
+            <span className="sys-index">§08</span> Testimonials
+          </p>
           <h2>Hear it from our valued customers.</h2>
         </div>
 

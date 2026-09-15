@@ -5,11 +5,11 @@
   --accent-dim: #e08600;
   --accent-rgb: 255, 156, 4;
 
-  /* ---------- Surfaces — dark-first ---------- */
-  --bg: #0a0b0d;
-  --bg-1: #0e1013;
-  --bg-2: #14171b;
-  --bg-3: #1b1f24;
+  /* ---------- Surfaces — dark-first (navy) ---------- */
+  --bg: #0a0e1a;
+  --bg-1: #0d1424;
+  --bg-2: #121b30;
+  --bg-3: #18233d;
   --bg-clean: #fbfbfa;
   --bg-clean-1: #f2f2ef;
   /* fixed dark surface, constant regardless of section context (e.g. device frames on a .section-clean) */
